@@ -5,6 +5,7 @@ behave mswin
 colorscheme darkblue
 set guioptions-=T
 set number
+set fileformats=dos
 au BufRead,BufNewFile *.config,*.sfdb,*.vssettings,*.csproj set filetype=xml
 au GUIEnter * simalt ~x
 
