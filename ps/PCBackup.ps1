@@ -1,6 +1,8 @@
-# Used in a daily Task Scheduler
 # Need Set-ExecutionPolicy Unrestricted
-# Run a program: powershell.exe; arguments, path to the script
+# Used in a daily Task Scheduler
+#   Run a program: powershell.exe
+#   Arguments (because windows is insane): -Command " &'C:\Users\burbo\Documents\My Projects\GitHub\config\ps\PCBackup.ps1'"
+#   Start in (no quotes): C:\Users\burbo\Documents\My Projects\GitHub\config\ps 
 
 $rootSource = "c:\users\burbo"
 $rootDest = "d:\sync"
