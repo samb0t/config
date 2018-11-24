@@ -9,13 +9,13 @@ $rootDest = "d:\sync"
 
 $backupDirs = 
     "Documents\My Audio",
-    "Documents\My Projects",
     "Documents\My ScanSnap",
     "Documents\JennyDocs",
     "Documents\Calibre",
     "Music",
     "Pictures",
-    "Videos"
+    "Videos",
+    "Documents\My Projects"
 
 $todaysDate = get-date -format yyyy-MM-dd
 
