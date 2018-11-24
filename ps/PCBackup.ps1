@@ -15,6 +15,7 @@ $backupDirs =
     "Music",
     "Pictures",
     "Videos",
+    "cmder\config",
     "Documents\My Projects"
 
 $todaysDate = get-date -format yyyy-MM-dd
