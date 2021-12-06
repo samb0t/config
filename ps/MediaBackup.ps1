@@ -13,4 +13,4 @@ $backupDirs =
 
 $todaysDate = get-date -format yyyy-MM-dd
 
-$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /r:3 /IT /NDL /LOG+:"$($todaysDate).log" }
+$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /r:3 /IT /NDL /MIR /LOG+:"$($todaysDate).log" }
