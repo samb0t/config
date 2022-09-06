@@ -5,7 +5,7 @@
 #   Start in (no quotes): C:\Users\burbo\Documents\My Projects\GitHub\config\ps 
 
 $rootSource = "c:\users\burbo"
-$rootDest = "d:\sync"
+$rootDest = "z:"
 
 $backupDirs = 
     "Documents\My Audio",
@@ -23,4 +23,4 @@ $todaysDate = get-date -format yyyy-MM-dd
 $backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /MIR /IT /NDL /LOG+:"$($todaysDate).log" }
  
 #  Backup this ps script
-copy-item $PSCommandPath d:\sync
+copy-item $PSCommandPath z:
