@@ -4,14 +4,20 @@
 #   Arguments (because windows is insane): -Command " &'C:\Users\burbo\Documents\My Projects\GitHub\config\ps\PCBackup.ps1'"
 #   Start in (no quotes): C:\Users\burbo\Documents\My Projects\GitHub\config\ps 
 
+param ($rootDest)
+if ($rootDest -eq $null) {
+    write-host "Destination root is required. e.g. z: or d:/sync"
+    return
+}
+
 $rootSource = "c:\users\burbo"
-$rootDest = "z:"
 
 $backupDirs = 
     "Documents\My Audio",
     "Documents\My ScanSnap",
     "Documents\JennyDocs",
     "Documents\Calibre",
+    "Documents\Installers",
     "Music",
     "Pictures",
     "Videos",
@@ -20,7 +26,7 @@ $backupDirs =
 
 $todaysDate = get-date -format yyyy-MM-dd
 
-$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /MIR /IT /NDL /LOG+:"$($todaysDate).log" }
+$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /IT /NDL /LOG+:"$($todaysDate).log" }
  
 #  Backup this ps script
-copy-item $PSCommandPath z:
+copy-item $PSCommandPath $rootDest

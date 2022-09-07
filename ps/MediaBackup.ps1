@@ -5,12 +5,9 @@
 #   Start in (no quotes): C:\Users\burbo\Documents\My Projects\GitHub\config\ps 
 # NOTE: Be careful with /MIR as it will blow away files that are extra in the destination - CHECK YOUR SRC/DEST
 
-$rootSource = "m:"
-$rootDest = "n:"
-
-$backupDirs = 
-    "mac-backup"
+$rootSource = "y:"
+$rootDest = "m:/mac-backup"
 
 $todaysDate = get-date -format yyyy-MM-dd
 
-$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /r:3 /IT /NDL /MIR /LOG+:"$($todaysDate).log" }
+robocopy $rootSource $rootDest /r:3 /IT /NDL /LOG+:"$($todaysDate).log"
