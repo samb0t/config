@@ -26,7 +26,7 @@ $backupDirs =
 
 $todaysDate = get-date -format yyyy-MM-dd
 
-$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /IT /NDL /LOG+:"$($todaysDate).log" }
+$backupDirs | % { robocopy """$($rootSource)\$($_)""" """$($rootDest)\$($_)""" /E /IT /NDL /LOG+:"$($todaysDate).log" }
  
 #  Backup this ps script
 copy-item $PSCommandPath $rootDest
