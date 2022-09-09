@@ -7,4 +7,4 @@
 
 $todaysDate = get-date -format yyyy-MM-dd
 
-robocopy y: m:/mac-backup /r:3 /e /IT /NDL /LOG+:"$($todaysDate).log"
+robocopy y: m:/mac-backup /r:3 /e /IT /NDL /LOG+:"$($todaysDate)-Media.log"
